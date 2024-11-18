@@ -1,5 +1,5 @@
 {
-  "name": "auth-routes",
+  "name": "auth-routes-octotask",
   "version": "0.0.1",
   "description": "Helpful authentication routes for Node.js GitHub integrations",
   "main": "./lib/index.js",

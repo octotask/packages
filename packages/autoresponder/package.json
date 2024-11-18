@@ -13,7 +13,7 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "octotask": "^6.0.0"
+    "octotask": "^1.1.1"
   },
   "devDependencies": {
     "eslint-plugin-import": "^2.7.0",

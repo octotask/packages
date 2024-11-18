@@ -16,7 +16,7 @@
   "dependencies": {
     "@types/aws-lambda": "^8.10.85",
     "lowercase-keys": "^2.0.0",
-    "octotask": "^13.3.0"
+    "octotask": "^1.1.1"
   },
   "devDependencies": {
     "@types/jest": "^29.0.0",
