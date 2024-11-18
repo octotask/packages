@@ -1,0 +1,36 @@
+{
+  "name": "browser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest --coverage && standard",
+    "build": "parcel build ./index.js --out-file index.min.js -d .",
+    "watch": "parcel watch ./index.js --out-file index.min.js -d .",
+    "package": "npm run build && node ./bin/package.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.4.2",
+    "node-zip": "^1.1.1",
+    "parcel-bundler": "^1.9.7",
+    "standard": "^11.0.1"
+  },
+  "standard": {
+    "env": [
+      "jest",
+      "browser"
+    ]
+  },
+  "jest": {
+    "testURL": "http://localhost"
+  },
+  "dependencies": {
+    "marked": "^0.4.0"
+  }
+}

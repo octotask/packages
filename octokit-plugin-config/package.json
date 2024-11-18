@@ -1,0 +1,79 @@
+{
+  "name": "@octotask/octokit-plugin-config",
+  "version": "0.0.0-development",
+  "description": "Get/set persisted configuration using YAML/JSON files in repositories",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs && tsc -p tsconfig.json",
+    "lint": "prettier --check '{src,test}/**/*.ts' README.md package.json",
+    "lint:fix": "prettier --write '{src,test}/**/*.ts' README.md package.json",
+    "pretest": "npm run -s lint",
+    "test": "vitest run --coverage"
+  },
+  "keywords": [
+    "github",
+    "api",
+    "sdk",
+    "toolkit"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@octokit/core": "^6.0.1",
+    "@octokit/tsconfig": "^3.0.0",
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^20.0.0",
+    "@vitest/coverage-v8": "^2.0.3",
+    "esbuild": "^0.24.0",
+    "fetch-mock": "^10.0.0",
+    "globby": "^14.0.0",
+    "prettier": "^3.0.0",
+    "semantic-release-plugin-update-version-in-files": "^1.1.0",
+    "strip-indent": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.3"
+  },
+  "peerDependencies": {
+    "@octokit/core": ">=5"
+  },
+  "release": {
+    "branches": [
+      "+([0-9]).x",
+      "main",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./pkg"
+        }
+      ],
+      [
+        "semantic-release-plugin-update-version-in-files",
+        {
+          "files": [
+            "pkg/dist-web/*",
+            "pkg/dist-node/*",
+            "pkg/*/version.*"
+          ]
+        }
+      ]
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,2 @@
+# Configuration for https://github.com/octotask/stale
+_extends: .github

@@ -1,0 +1,20 @@
+# Dependencies
+node_modules
+
+# Output folder
+bin
+
+# Logs
+*.log
+
+# Yarn lockfile. Use package-lock.json instead.
+yarn.lock
+
+# Test-related generated folders
+coverage
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+.vscode
+__create_octotask_app__*

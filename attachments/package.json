@@ -1,0 +1,28 @@
+{
+  "name": "octotask-attachments",
+  "version": "1.0.0",
+  "description": "A Octotask extension to add message attachments to comments on GitHub",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest && standard"
+  },
+  "keywords": [
+    "octotask",
+    "octotask-extension"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "jsdom": "^11.3.0",
+    "octotask": "^6.0.0",
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}

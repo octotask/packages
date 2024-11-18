@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExtensionConnection constructor throws an error if the context does not have a number 1`] = `[Error: ExtensionConnection can only be used on issues or pull requests.]`;
+
+exports[`ExtensionConnection methods #createEvent adds an event to the issue body 1`] = `
+Object {
+  "body": "
+
+<!-- octotask = {\\"123\\":{\\"events\\":[{\\"after\\":null,\\"body\\":\\"Hello!\\",\\"avatarUrl\\":\\"https://image.com/image.png\\",\\"login\\":\\"my-dope-app[bot]\\"}]}} -->",
+  "number": 1,
+  "owner": "JasonEtco",
+  "repo": "pizza",
+}
+`;
+
+exports[`e2e creates a new event on an issue 1`] = `
+Object {
+  "body": "
+
+<!-- octotask = {\\"123\\":{\\"events\\":[{\\"after\\":123,\\"body\\":\\"Heyo\\",\\"login\\":\\"my-dope-app[bot]\\",\\"avatarUrl\\":\\"http://image.com/image.png\\"}]}} -->",
+  "number": 1,
+  "owner": "JasonEtco",
+  "repo": "pizza",
+}
+`;
+
+exports[`e2e creates a new event on an pull request 1`] = `
+Object {
+  "body": "
+
+<!-- octotask = {\\"123\\":{\\"events\\":[{\\"after\\":123,\\"body\\":\\"Heyo\\",\\"login\\":\\"my-dope-app[bot]\\",\\"avatarUrl\\":\\"http://image.com/image.png\\"}]}} -->",
+  "number": 1,
+  "owner": "JasonEtco",
+  "repo": "pizza",
+}
+`;
+
+exports[`e2e throws if there is no issue number 1`] = `[Error: ExtensionConnection can only be used on issues or pull requests.]`;

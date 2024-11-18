@@ -1,0 +1,67 @@
+{
+  "name": "@octotask/get-private-key",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.0-development",
+  "description": "Get private key from a path, environment variables, or a `*.pem` file in the current working directory",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs && tsc -p tsconfig.json",
+    "lint": "prettier --check '{src,test}/**/*.{ts,md}' *.md *.json",
+    "lint:fix": "prettier --write '{src,test}/**/*.{ts,md}' *.md *.json",
+    "pretest": "npm run -s lint",
+    "test": "vitest run --coverage"
+  },
+  "keywords": [
+    "github-app",
+    "octotask"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@octokit/tsconfig": "^3.0.0",
+    "@vitest/coverage-v8": "^2.0.3",
+    "esbuild": "^0.23.0",
+    "prettier": "^3.3.3",
+    "semantic-release": "^24.0.0",
+    "semantic-release-plugin-update-version-in-files": "^1.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.3"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "release": {
+    "branches": [
+      "+([0-9]).x",
+      "main",
+      "next",
+      {
+        "name": "beta",
+        "prerelease": true
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./pkg"
+        }
+      ],
+      [
+        "semantic-release-plugin-update-version-in-files",
+        {
+          "files": [
+            "pkg/dist-web/*",
+            "pkg/dist-node/*",
+            "pkg/*/version.*"
+          ]
+        }
+      ]
+    ]
+  }
+}

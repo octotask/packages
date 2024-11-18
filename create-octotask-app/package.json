@@ -1,0 +1,63 @@
+{
+  "name": "create-octotask-app",
+  "version": "0.0.0-development",
+  "description": "Create a Octotask app",
+  "bin": {
+    "create-octotask-app": "./bin/create-octotask-app.js",
+    "run-tests": "./bin/run-tests.js"
+  },
+  "files": [
+    "bin",
+    "templates"
+  ],
+  "scripts": {
+    "test": "./script/test-all-templates.sh",
+    "test:template": "./script/test-template.sh",
+    "lint": "prettier --ignore-path .gitignore --check '**/*.{js,ts,json,yml,md}'",
+    "lint:fix": "prettier --ignore-path .gitignore --write '**/*.{js,ts,json,yml,md}'",
+    "dev:make-cpa": "node --input-type=module -e 'import { chBinMod } from \"./script/make-executable.js\"; chBinMod(\"create-octotask-app\")'",
+    "dev:make-tests": "node --input-type=module -e 'import { chBinMod } from \"./script/make-executable.js\"; chBinMod(\"run-tests\")'",
+    "build": "npm run build:clean && tsc && npm run dev:make-cpa && npm run dev:make-tests",
+    "build:clean": "rimraf bin",
+    "build:source": "tsc && npm run dev:make-cpa",
+    "build:tests": "tsc && npm run dev:make-tests"
+  },
+  "repository": "github:octotask/create-octotask-app",
+  "keywords": [
+    "octotask"
+  ],
+  "author": "Brandon Keepers",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^12.0.0",
+    "conjecture": "^0.1.2",
+    "egad": "^0.2.0",
+    "execa": "^8.0.1",
+    "inquirer": "^9.1.4",
+    "jsesc": "^3.0.2",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.kebabcase": "^4.1.1",
+    "simple-git": "^3.22.0",
+    "stringify-author": "^0.1.3",
+    "validate-npm-package-name": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.2",
+    "@types/inquirer": "^9.0.3",
+    "@types/jsesc": "^3.0.1",
+    "@types/lodash.camelcase": "^4.3.7",
+    "@types/lodash.kebabcase": "^4.1.7",
+    "@types/node": "^20.0.0",
+    "@types/rimraf": "^4.0.5",
+    "@types/validate-npm-package-name": "^4.0.0",
+    "prettier": "^3.2.4",
+    "rimraf": "^5.0.5",
+    "semantic-release": "^24.0.0",
+    "typescript": "^5.3.3"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">= 18"
+  }
+}

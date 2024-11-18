@@ -1,0 +1,14 @@
+{
+  "name": "eslint-config-octotask",
+  "version": "0.1.0",
+  "description": "ESLint shareable config for Octotask",
+  "license": "ISC",
+  "repository": "octotask/eslint-config-octotask",
+  "author": "Brandon Keepers",
+  "dependencies": {
+    "eslint-config-xo": "^0.18.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=3.17.0"
+  }
+}

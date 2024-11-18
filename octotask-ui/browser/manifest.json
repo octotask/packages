@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "name": "Octotask UI",
+  "version": "1.0",
+  "description": "Allows Octotask Apps to integrate with the GitHub UI",
+  "content_scripts": [{
+    "matches": ["*://*.github.com/*"],
+    "js": ["index.min.js"]
+  }]
+}

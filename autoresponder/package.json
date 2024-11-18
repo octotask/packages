@@ -1,0 +1,32 @@
+{
+  "name": "octotask-autoresponder",
+  "version": "0.1.0",
+  "description": "Automatically respond to new issues",
+  "main": "index.js",
+  "scripts": {
+    "start": "octotask run ./index.js",
+    "test": "jest && standard"
+  },
+  "keywords": [
+    "octotask",
+    "github"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "octotask": "^6.0.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.7.0",
+    "jest": "^22.2.2",
+    "smee-client": "^1.0.1",
+    "standard": "^11.0.0"
+  },
+  "engines": {
+    "node": "~7.7.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
