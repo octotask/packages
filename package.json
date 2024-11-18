@@ -1,0 +1,29 @@
+{
+  "name": "octotask-metadata",
+  "version": "1.1.0",
+  "description": "A Octotask extension to store metadata on Issues and Pull Requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest && standard"
+  },
+  "keywords": [
+    "octotask"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "nock": "^13.0.4",
+    "octotask": "^1.1.1",
+    "semantic-release": "^20.0.0",
+    "standard": "^10.0.3"
+  },
+  "peerDependencies": {
+    "octotask": ">1"
+  },
+  "standard": {
+    "env": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
